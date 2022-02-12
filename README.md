@@ -37,5 +37,5 @@ make
 
   ## Interface
  
-  <img src = "src/img/interface.png" width=300>
+  <img src = "src/img/interface.png" width=500>
 
