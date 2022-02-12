@@ -5,7 +5,8 @@ This program is written in C language and deals with file handling.
 
 ## About
 
-This program compares the input written by the user with the answer written in the text file from a certain japanese character. 
+This program compares the input written by the user with the answer written in the txt file from a certain japanese character.
+The questions are generated randomly.
 
 
  ## Syncing a Forked Repository on github
@@ -36,5 +37,5 @@ make
 
   ## Interface
  
-  <img src = "src/img/interface.png" width=250>
+  <img src = "src/img/interface.png" width=300>
 
