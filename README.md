@@ -34,8 +34,3 @@ make
  
   * Kanki test
   * Better interface
-
-  ## Interface
- 
-  <img src = "src/img/interface.png" width=500>
-
