@@ -3,13 +3,15 @@
 #include <string.h>
 #include <time.h>
 #include <ctype.h>
+#define SIZE 1024
+
 
 #include "../include/menu.h"
 
 int geraNumero(int n){
     int num=0;
-    unsigned seed = time(0);
-    srand(seed);
+    //unsigned seed = time(0);
+    srand((unsigned int)time(NULL));
     while(num%2==0) num = (rand() % (n - 1 + 1)) + 1;
     return num;
 }
@@ -25,23 +27,23 @@ int mystrcmp(char *s1,char *s2){
 
 void katakanaTest(){
         int score =0;
-               while(score!=100){
+               while(1){
                FILE * fp;
                fp = fopen("katakana.txt","r");
                if(fp == NULL) {
                     perror("Error opening file");
-                    return(-1);
+                    exit(1);
                }
-               char str[10];
-               char ans[10];
+               char str[SIZE];
+               char ans[SIZE];
                int i =0;
                int number = geraNumero(218);
                while(i<number && fgets(str,10,fp)){
                     i++;
                }
-               printf("--->   %s",str);
-               scanf("    %s", ans);
-               fgets(str,10,fp);
+               printf("                       %s",str);
+               scanf("                        %s", ans);
+               fgets(str,SIZE,fp);
                if(mystrcmp(strcat(ans,"\n"),str)==0){
                     score += 5;
                     printf("Correct! - Score :%d\n",score);
@@ -52,10 +54,12 @@ void katakanaTest(){
                     printf("#################################################\n");
                }
 
-              fclose(fp);
-               }
-          system("clear");
-          printf("     おめでとう!!\n     You reached 100 points!\n");
+          fclose(fp);
+	  if(score%100==0){
+	  system("clear");
+          printf(" おめでとう!!\n You reached %d points!\n",score);
+	  }
+     }
 
 }
 
@@ -63,23 +67,23 @@ void katakanaTest(){
 
 void hiraganaTest(){
 	int score =0;
-               while(score!=100){
+               while(1){
                FILE * fp;
                fp = fopen("hiragana.txt","r");
                if(fp == NULL) {
                     perror("Error opening file");
-                    return(-1);
+                    exit(1);
                }
-               char str[10];
-               char ans[10];
+               char str[SIZE];
+               char ans[SIZE];
                int i =0;
                int number = geraNumero(169);
                while(i<number && fgets(str,10,fp)){
                     i++;
                }
-               printf("--->   %s",str);
-               scanf("    %s", ans);
-               fgets(str,10,fp);
+                    printf("                       %s",str);
+                    scanf("                        %s", ans);
+               fgets(str,SIZE,fp);
                if(mystrcmp(strcat(ans,"\n"),str)==0){
                     score += 5;
                     printf("Correct! - Score :%d\n",score);
@@ -91,9 +95,11 @@ void hiraganaTest(){
                }
 
               fclose(fp);
-               }
-	  system("clear");
-	  printf("     おめでとう!!\n     You reached 100 points!\n");
+	  if(score%100==0){
+          system("clear");
+          printf(" おめでとう!!\n You reached %d points!\n",score);
+          }
+     }
 
 }
 
@@ -105,9 +111,10 @@ scanf("%d",&option);
 switch(option){
 	case 1:;
 		hiraganaTest();
-        case 2:;
+       		break;
+       	case 2:;
 	        katakanaTest();
-	       
+	       break;
 	case 0:;
 	        return 0;
            }
