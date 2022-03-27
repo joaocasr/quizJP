@@ -3,6 +3,8 @@
 #include <string.h>
 #include <time.h>
 #include <ctype.h>
+#include <unistd.h>
+
 #define SIZE 1024
 
 
@@ -25,6 +27,9 @@ int mystrcmp(char *s1,char *s2){
     return 0;
 }
 
+
+
+
 void katakanaTest(){
         int score =0;
                while(1){
@@ -41,21 +46,25 @@ void katakanaTest(){
                while(i<number && fgets(str,10,fp)){
                     i++;
                }
-               printf("                       %s",str);
-               scanf("                        %s", ans);
+               printf("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \t \t \t \t \t \t \t \t \t \t \t \t  %s",str);
+	       scanf("%s", ans);
                fgets(str,SIZE,fp);
                if(mystrcmp(strcat(ans,"\n"),str)==0){
                     score += 5;
-                    printf("Correct! - Score :%d\n",score);
-                    printf("#################################################\n");
+		    printf("\n\n\n\n\n\n\n\n\n \t \t \t \t \t \t \t                                 Correct! - Score :%d\n",score);
+                    printf("\n###########################################################################################################################################################################################################\n");
+		    sleep(2);
+		    system("clear");
                }else{
                     score -= 5;
-                    printf("Incorrect! - Score : %d\n",score);
-                    printf("#################################################\n");
+		                        printf("\n\n\n\n\n          \t \t \t \t \t \t \t                          Incorrect! - Score : %d\n",score);
+                    printf("\n###########################################################################################################################################################################################################\n");
+		    sleep(5);
+		    system("clear");
                }
 
           fclose(fp);
-	  if(score%100==0){
+	  if(score%100==0 && score>0){
 	  system("clear");
           printf(" おめでとう!!\n You reached %d points!\n",score);
 	  }
@@ -81,33 +90,38 @@ void hiraganaTest(){
                while(i<number && fgets(str,10,fp)){
                     i++;
                }
-                    printf("                       %s",str);
-                    scanf("                        %s", ans);
+                    printf("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \t \t \t \t \t \t \t \t \t \t \t \t  %s",str);
+                    scanf("%s", ans);
                fgets(str,SIZE,fp);
                if(mystrcmp(strcat(ans,"\n"),str)==0){
                     score += 5;
-                    printf("Correct! - Score :%d\n",score);
-		    printf("#################################################\n");
+                    printf("\n\n\n\n\n\n\n\n\n \t \t \t \t \t \t \t                                 Correct! - Score :%d\n",score);
+		    printf("\n###########################################################################################################################################################################################################\n");
+		    sleep(5);
+		    system("clear");
                }else{
                     score -= 5;
-                    printf("Incorrect! - Score : %d\n",score);
-		    printf("#################################################\n");
-               }
+                    printf("\n\n\n\n\n          \t \t \t \t \t \t \t                          Incorrect! - Score : %d\n",score);
+		    printf("\n###########################################################################################################################################################################################################\n");
+               	    sleep(2);
+		    system("clear");	
+	       }
 
               fclose(fp);
-	  if(score%100==0){
+	  if(score%100==0 && score>0){
           system("clear");
-          printf(" おめでとう!!\n You reached %d points!\n",score);
+          printf("\n \n \n \n \n \t \t \t \t \t \t \t  おめでとう!!\n You reached %d points!\n",score);
           }
      }
 
 }
 
 int main() {
-int option;
-escreveMenu();
-printf("Choose Option: ");
-scanf("%d",&option);
+menuController();
+}
+
+int begin(int option){
+system("clear");
 switch(option){
 	case 1:;
 		hiraganaTest();
@@ -118,5 +132,6 @@ switch(option){
 	case 0:;
 	        return 0;
            }
+return 0;
 }
 

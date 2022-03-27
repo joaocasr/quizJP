@@ -1,7 +1,7 @@
 # QUIZJP
 
 This software allows you to practice Japanese hiragana and katakana.
-This program is written in C language and deals with file handling.
+This program is written in C language and deals with file manipulation.
 
 ## About
 
@@ -30,7 +30,19 @@ cd quizJP/
 make
 ./test
 ```
+  ## Menu
+  This is the current state of the menu. Here you can select the different kind of quiz you want.
+  For now it's only available the hiragana and katakana quiz. Soon I will add new features.
+    
+<img src = "obj/img/img1.png" width=700>
+
+  ## Hiragana Quiz
+  Here you can see some of the functionalities of the software, such as the pontuation register.
+  The goal is to write the correct romaji for a certain hiragana/katakana showed in the screen.
+  How many points did you get? 
+  
+<img src = "obj/img/img2.png" width=700>
+
   ## TO-DO
  
-  * Kanki test
-  * Better interface
+  * Kanji test
