@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 #define SIZE 1024
-
+#define gotoxy(x,y) printf("\033[%d;%dH", (y), (x))
 
 #include "../include/menu.h"
 
@@ -46,20 +46,24 @@ void katakanaTest(){
                while(i<number && fgets(str,10,fp)){
                     i++;
                }
-               printf("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \t \t \t \t \t \t \t \t \t \t \t \t  %s",str);
+	       gotoxy(100,20);
+	       //printConsole(str);
+	       //gotoxy(400,20);
+	       printf("%s",str);
+	       gotoxy(100,40);
 	       scanf("%s", ans);
                fgets(str,SIZE,fp);
                if(mystrcmp(strcat(ans,"\n"),str)==0){
                     score += 5;
 		    printf("\n\n\n\n\n\n\n\n\n \t \t \t \t \t \t \t                                 Correct! - Score :%d\n",score);
                     printf("\n###########################################################################################################################################################################################################\n");
-		    sleep(2);
+		    sleep(1);
 		    system("clear");
                }else{
                     score -= 5;
 		                        printf("\n\n\n\n\n          \t \t \t \t \t \t \t                          Incorrect! - Score : %d\n",score);
                     printf("\n###########################################################################################################################################################################################################\n");
-		    sleep(5);
+		    sleep(2);
 		    system("clear");
                }
 
@@ -90,14 +94,18 @@ void hiraganaTest(){
                while(i<number && fgets(str,10,fp)){
                     i++;
                }
-                    printf("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \t \t \t \t \t \t \t \t \t \t \t \t  %s",str);
-                    scanf("%s", ans);
-               fgets(str,SIZE,fp);
+               gotoxy(100,20);
+               //printConsole(str);
+               //gotoxy(400,20);
+               printf("%s",str);
+               gotoxy(100,40);
+               scanf("%s", ans);
+	       fgets(str,SIZE,fp);
                if(mystrcmp(strcat(ans,"\n"),str)==0){
                     score += 5;
                     printf("\n\n\n\n\n\n\n\n\n \t \t \t \t \t \t \t                                 Correct! - Score :%d\n",score);
 		    printf("\n###########################################################################################################################################################################################################\n");
-		    sleep(5);
+		    sleep(1);
 		    system("clear");
                }else{
                     score -= 5;

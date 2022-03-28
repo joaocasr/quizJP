@@ -81,6 +81,27 @@ void printMenu(int q){
     }
 }
 
+
+/*
+int printConsole(char* v){
+        //puts(BOLD_CYAN);   
+    printf("╔══════════════════════════════════════════════╗\n");
+    printf("║                                              ║║\n");
+    printf("║                      %s                      ║\n",v);
+    printf("║                                              ║\n");
+    printf("║                                              ║\n");
+    printf("║                                              ║\n");
+    printf("║                                              ║\n");
+    printf("║                                              ║\n");
+    printf("║                _______________               ║\n");
+    printf("║                                              ║\n");
+    printf("║                                              ║\n");
+    printf("╚══════════════════════════════════════════════╝\n");
+return 0;
+}*/
+
+
+
 int printMenuScreen1(){
         system("clear");
 	puts(BOLD_CYAN);
