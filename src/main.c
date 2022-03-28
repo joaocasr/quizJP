@@ -50,18 +50,18 @@ void katakanaTest(){
 	       //printConsole(str);
 	       //gotoxy(400,20);
 	       printf("%s",str);
-	       gotoxy(100,40);
+	       gotoxy(100,35);
 	       scanf("%s", ans);
                fgets(str,SIZE,fp);
                if(mystrcmp(strcat(ans,"\n"),str)==0){
                     score += 5;
-		    printf("\n \n \n \n \n \t \t \t \t \t \t \t                                 Correct! - Score :%d\n",score);
+		    printf("\n \n \n \t \t \t \t \t \t \t                                 Correct! - Score :%d\n",score);
                     printf("\n###########################################################################################################################################################################################################\n");
 		    sleep(1);
 		    system("clear");
                }else{
                     score -= 5;
-		    printf("\n \n \n \n \n          \t \t \t \t \t \t \t                          Incorrect! - Score : %d\n",score);
+		    printf("\n \n \n          \t \t \t \t \t \t \t                          Incorrect! - Score : %d\n",score);
                     printf("\n###########################################################################################################################################################################################################\n");
 		    sleep(2);
 		    system("clear");
@@ -98,18 +98,18 @@ void hiraganaTest(){
                //printConsole(str);
                //gotoxy(400,20);
                printf("%s",str);
-               gotoxy(100,40);
+               gotoxy(100,35);
                scanf("%s", ans);
 	       fgets(str,SIZE,fp);
                if(mystrcmp(strcat(ans,"\n"),str)==0){
                     score += 5;
-                    printf("\n\n\n\n\n \t \t \t \t \t \t \t                                 Correct! - Score :%d\n",score);
+                    printf("\n \n \t \t \t \t \t \t \t                                 Correct! - Score :%d\n",score);
 		    printf("\n###########################################################################################################################################################################################################\n");
 		    sleep(1);
 		    system("clear");
                }else{
                     score -= 5;
-                    printf("\n\n\n\n\n          \t \t \t \t \t \t \t                          Incorrect! - Score : %d\n",score);
+                    printf("\n \n          \t \t \t \t \t \t \t                          Incorrect! - Score : %d\n",score);
 		    printf("\n###########################################################################################################################################################################################################\n");
                	    sleep(2);
 		    system("clear");	
